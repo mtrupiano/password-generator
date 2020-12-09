@@ -5,8 +5,15 @@ $(function() {
 
         console.clear();
 
-        // Prompt user to enter password length (between 8 and 128 inclusive)
         var numChars = $('#pw-size-form').val();
+
+        if (numChars > 128 || numChars < 8) {
+            // show error near size entry field
+            return;
+        }
+        
+
+        // Prompt user to enter password length (between 8 and 128 inclusive)
         // while (numChars < 8 || numChars > 128) {
         //     numChars = prompt("Enter number of characters in your password (min 8, max 128)");
         // }
@@ -53,8 +60,8 @@ $(function() {
         
         console.log(`The generated password (${numChars} long): ${pw}`);
 
-        $("#result").text(pw);
+        $("#result").val(pw);
+        
     });
-
 
 });
