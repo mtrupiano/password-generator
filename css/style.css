@@ -12,13 +12,7 @@ header {
 }
 
 h1 {
-    /* display: inline; */
     font-family: 'Roboto Mono', monospace;
-}
-
-h2 {
-    /* display: inline;; */
-    color: rgb(148, 148, 148);
 }
 
 main {
@@ -67,17 +61,9 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 767.98px) {
-    header .col-sm-12 {
-        flex-wrap: wrap;
-    }
+
     #wordmark {
         font-size: 48px;
-    }
-
-    h2 {
-        font-size: 26px;
-        margin-left: 32px;
-        line-height: 200%;
     }
 
     .input-group-prepend {
