@@ -5,7 +5,7 @@ $(function() {
 
         console.clear();
 
-        var numChars = $('#pw-size-form').val();
+        var numChars = $('#pw-size-value').val();
 
         if (numChars > 128 || numChars < 8) {
             // show error near size entry field
@@ -58,10 +58,14 @@ $(function() {
             pw += charSpace[Math.floor(Math.random() * charSpace.length)];
         }
         
-        console.log(`The generated password (${numChars} long): ${pw}`);
-
         $("#result").val(pw);
-        
+
+        // Re-size the password result text area if the password is long
+        if (!($("#result").prop("scrollHeight") <= 55)) {
+            $("#result").css("height", "");
+            $("#result").css("height", $("#result").prop("scrollHeight") + 10 + "px");
+        }
+
     });
 
 });

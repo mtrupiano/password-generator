@@ -1,8 +1,92 @@
+body {
+    background-color: rgb(71, 71, 71);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16pt;
+}
+
+header {
+    background-color: rgb(49, 49, 49);
+    color: rgb(0, 214, 0);
+    height: 110px;
+}
+
 h1 {
+    /* display: inline; */
     font-family: 'Roboto Mono', monospace;
+}
+
+h2 {
+    /* display: inline;; */
+    color: rgb(148, 148, 148);
+}
+
+main {
+    margin-top: 25px;
+}
+
+footer {
+    background-color: rgb(49, 49, 49);
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: rgba(3, 199, 3, 0.418);
+}
+
+footer a:hover {
+    color: rgb(0, 214, 0);
+    text-decoration: none;
+}
+
+#generate-btn {
+    background-color: rgb(0, 214, 0);
+    font-size: 16pt;
 }
 
 #result {
     font-family: 'Roboto Mono', monospace;
+    font-size: 20pt;
+    height: 55px;
+}
+
+#pw-size-form {
     font-size: 16pt;
+}
+
+#pw-size-value {
+    font-size: 20pt;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#generate-group {
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+}
+
+@media only screen and (max-width: 767.98px) {
+    header .col-sm-12 {
+        flex-wrap: wrap;
+    }
+    #wordmark {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-left: 32px;
+        line-height: 200%;
+    }
+
+    .input-group-prepend {
+        width: 30%
+    }
+
+    #result {
+        height: 96px!important;
+        font-size: 16pt;
+    }
+
 }

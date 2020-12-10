@@ -1,62 +1,96 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Password Generator</title>
+        <title>givemeapass</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
         <!-- Google fonts link -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Nunito&family=Open+Sans&family=Roboto+Mono&family=Source+Code+Pro&display=swap"
             rel="stylesheet">
     </head>
     <body>
-        <h1>&gt;PASSWORD GENERATOR</h1>
+        <header>
+            <div class="ml-1">
+                <div class="row">
+                    <div class="col-sm-12 d-flex">
 
-        <div class="input-group">
-
-            <div class="mb-3">
-                <label for="numberOfChars" class="form-label">Password size</label>
-                <input type="number" class="form-control" min="8" max="128" id="pw-size-form" value="8">
+                        <h1 class="display-3 mr-4" id="wordmark">&gt;givemeapass_</h1>
+                        <h2 class="display-5 text-nowrap">The not-so-secure password generator.</h2>
+                    </div>
+                </div>
             </div>
+        </header>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="include-upper" checked>
-                <label class="form-check-label" for="upperCase">
-                    Upper case letters
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="include-lower" checked>
-                <label class="form-check-label" for="lowerCase">
-                    Lower case letters
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="include-numeric" checked>
-                <label class="form-check-label" for="numeric">
-                    Numeric characters
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="include-special" checked>
-                <label class="form-check-label" for="special">
-                    Special characters
-                </label>
-            </div>
-        </div>
+        <main class="container">    
+            <div class="row">
+                <div class="col-md-6 align-middle">
+                    <div class="input-group mb-3" id="pw-size-form">
+                        <div class="input-group-prepend align-middle">
+                            <label for="numberOfChars" class="form-label mr-3 align-middle">Password size: </label>
+                        </div>
+                        <input type="number" class="form-control" min="8" max="128" id="pw-size-value" value="8">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="include-upper" checked>
+                        <label class="form-check-label" for="upperCase">
+                            Upper case letters
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="include-lower" checked>
+                        <label class="form-check-label" for="lowerCase">
+                            Lower case letters
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="include-numeric" checked>
+                        <label class="form-check-label" for="numeric">
+                            Numeric characters
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="include-special" checked>
+                        <label class="form-check-label" for="special">
+                            Special characters
+                        </label>
+                    </div>
+                </div>
+            </div>                
 
-        <button class="btn btn-lg" id="generate-btn">Generate Password</button>
+            <div class="row" id="generate-group">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-lg align-middle" id="generate-btn">Generate Password</button>
+                        </div>
+                        <textarea style="resize: none;" class="form-control" id="result" placeholder="Password will appear here" cols="30" rows="10" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        
+        </main>
 
-        <input type="text" class="form-control" id="result" placeholder="" readonly>
-
+        <footer class="footer fixed-bottom">
+            <div class="container text-center">
+                <a href="https://github.com/mtrupiano/password-generator" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </footer>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
