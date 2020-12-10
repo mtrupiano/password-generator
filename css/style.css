@@ -35,6 +35,11 @@ footer a:hover {
     text-decoration: none;
 }
 
+.list-group-item {
+    background-color: rgb(71, 71, 71);
+    border: none;
+}
+
 #generate-btn {
     background-color: rgb(0, 214, 0);
     font-size: 16pt;
