@@ -35,6 +35,10 @@
                         </div>
                         <input type="number" class="form-control" min="8" max="128" id="pw-size-value" value="8">
                     </div>
+                    <div class="alert alert-warning alert-dismissible" id="size-alert" style="display: none;" role="alert">
+                        Password must contain at <strong>least 8 characters (128 max).</strong> 
+                        <button type="button" id="size-alert-close" data-dismiss="alert" class="btn-close" aria-label="Close"></button>
+                    </div>
                 </div>
                 
                 <div class="col-md-6">
@@ -73,6 +77,9 @@
                             
                         </li>
                     </ul>
+                    <div class="alert alert-warning alert-dismissible" id="char-alert" style="display: none;" role="alert">You must select <strong>at least 1 character type</strong> 
+                        <button type="button" id="size-alert-close" data-dismiss="alert" class="btn-close" aria-label="Close"></button>
+                    </div>
                 </div>
             </div>                
 

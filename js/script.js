@@ -1,31 +1,45 @@
 
 $(function() {
 
+    $('.alert').alert();
+
+    $('.alert').on('close.bs.alert', function (e) {
+        e.preventDefault();
+        $(this).hide();
+    });
+
     $('#generate-btn').click(function() {
 
         console.clear();
 
         var numChars = $('#pw-size-value').val();
 
+        
+        var charTypes = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "abcdefghijklmnopqrstuvwxyz",
+        "01234567890123456789",    // Repeating the digits increases chances for a
+        // number to appear in the resulting password
+        " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
+        
+        var includedChars =    [$('#include-upper').is(':checked'),
+                                $('#include-lower').is(':checked'),
+                                $('#include-numeric').is(':checked'),
+                                $('#include-special').is(':checked')]
+        
         if (numChars > 128 || numChars < 8) {
             // show error near size entry field
+            $('#size-alert').show();
+            if (!includedChars.includes(true)) {
+                $('#char-alert').show();
+            }
+            return;
+        } else if (!includedChars.includes(true)) {
+            $('#char-alert').show();
             return;
         }
-
-        var charTypes = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                         "abcdefghijklmnopqrstuvwxyz",
-                         "01234567890123456789",    // Repeating the digits increases chances for a
-                                                    // number to appear in the resulting password
-                         " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
-
-        var includedChars = [$('#include-upper').is(':checked'),
-                             $('#include-lower').is(':checked'),
-                             $('#include-numeric').is(':checked'),
-                             $('#include-special').is(':checked')]
-    
-        if (!includedChars.includes(true)) {
-            alert("You must select at least one character type.");
-            return;
+        else {
+            $('#char-alert').hide();
+            $('#size-alert').hide();
         }
         
         var charSpace = "";
@@ -52,7 +66,6 @@ $(function() {
             $("#result").css("height", "");
             $("#result").css("height", $("#result").prop("scrollHeight") + 10 + "px");
         }
-
+ 
     });
-
 });
