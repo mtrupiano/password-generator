@@ -14,13 +14,15 @@ $(function() {
     $('#generate-btn').click(function() {
 
         var numChars = $('#pw-size-value').val();
-    
+        
+        // Collect character type groups in array
         var charTypes = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ",
                          "abcdefghijklmnopqrstuvwxyz",
                          "01234567890123456789",    // Repeating the digits increases chances for a
                                                     // number to appear in the resulting password
                          " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
         
+        // Boolean array stores character type checkbox selections
         var includedChars =    [$('#include-upper').is(':checked'),
                                 $('#include-lower').is(':checked'),
                                 $('#include-numeric').is(':checked'),
