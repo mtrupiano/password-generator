@@ -1,3 +1,4 @@
+/* Default page style */
 body {
     background-color: rgb(71, 71, 71);
     color: white;
@@ -5,24 +6,29 @@ body {
     font-size: 16pt;
 }
 
+/* Header style */
 header {
     background-color: rgb(49, 49, 49);
     color: rgb(0, 214, 0);
     height: 110px;
 }
 
+/* Font for header wordmark */
 h1 {
     font-family: 'Roboto Mono', monospace;
 }
 
+/* Margin b/w main content and header */
 main {
     margin-top: 25px;
 }
 
+/* Left padding for the list of checkboxes */
 ul {
     padding-left: 20px!important;
 }
 
+/* Footer style */
 footer {
     background-color: rgb(49, 49, 49);
     height: 60px;
@@ -30,57 +36,55 @@ footer {
     font-size: 1.2em;
 }
 
+/* Style the link within the footer */
 footer a {
     color: rgba(3, 199, 3, 0.418);
 }
 
+/* Brighten color on hover for footer link */
 footer a:hover {
     color: rgb(0, 214, 0);
     text-decoration: none;
 }
 
+/* Remove border and set background color to match page for checkbox list items */
 .list-group-item {
     background-color: rgb(71, 71, 71);
     border: none;
 }
 
-.include-btns {
-    background-color: white;;
-}
-
-.include-btns:checked {
-    background-color: rgb(0, 214, 0)
-}
-
+/* Style for the 'Generate Password' button */
 #generate-btn {
     background-color: rgb(0, 214, 0);
     font-size: 16pt;
 }
 
+/* Style for the generated password text field */
 #result {
     font-family: 'Roboto Mono', monospace;
     font-size: 20pt;
     height: 55px;
 }
 
-#pw-size-form {
-    font-size: 16pt;
-}
-
+/* Padding for the password size form label */
 #pw-size-form label {
+    font-size: 16pt;
     padding-top: 12px;
 }
 
+/* Style for the text field of the password size form */
 #pw-size-value {
     font-size: 20pt;
     font-family: 'Roboto Mono', monospace;
     width: 20px;
 }
 
+/* Padding for the 'Generate Password' form */
 #generate-group {
     padding-top: 15vh;
 }
 
+/* Some mild responsive characteristics */
 @media only screen and (max-width: 767.98px) {
 
     #wordmark {
