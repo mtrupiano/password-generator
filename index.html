@@ -20,18 +20,22 @@
             rel="stylesheet">
     </head>
     <body>
+        <!-- Header -->
         <header class="header">
             <div class="container ml-1">
                 <h1 class="display-3 mr-4" id="wordmark">&gt;givemeapass_</h1>
             </div>
         </header>
 
+        <!-- Main content -->
         <main class="container">    
-            <div class="row">
-                <div class="col-md-6 align-middle">
+            <div class="row align-items-center">
+
+                <!-- Column for password size entry field -->
+                <div class="col-sm-6 align-items-right">
                     <div class="input-group mb-3" id="pw-size-form">
-                        <div class="input-group-prepend align-middle">
-                            <label for="numberOfChars" class="form-label mr-3 align-middle">Password size: </label>
+                        <div class="input-group-prepend">
+                            <label for="numberOfChars" class="form-label mr-3">Password size: </label>
                         </div>
                         <input type="number" class="form-control" min="8" max="128" id="pw-size-value" value="8">
                     </div>
@@ -41,49 +45,34 @@
                     </div>
                 </div>
                 
-                <div class="col-md-6">
+                <!-- Column containing list of checkboxes to select character types -->
+                <div class="col-sm-6">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="include-upper" checked>
-                                <label class="form-check-label" for="upperCase">
-                                    Include upper case letters?
-                                </label>
-                            </div>
+                            <input type="checkbox" class="form-check-input" id="include-upper" checked>Include upper-case letters?
                         </li>
                         <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="include-lower" checked>
-                                <label class="form-check-label" for="lowerCase">
-                                    Include lower case letters?
-                                </label>
-                            </div>
+                            <input type="checkbox" class="form-check-input" id="include-lower" checked>Include lower-case letters?
+
                         </li>
                         <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="include-numeric" checked>
-                                <label class="form-check-label" for="numeric">
-                                    Include numeric characters?
-                                </label>
-                            </div>
+                            <input type="checkbox" class="form-check-input" id="include-numeric" checked>Include numeric characters?
+
                         </li>
                         <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="include-special" checked>
-                                <label class="form-check-label" for="special">
-                                    Include special characters?
-                                </label>
-                            </div>
-                            
+                            <input type="checkbox" class="form-check-input" id="include-special" checked>Include special characters?
                         </li>
-                    </ul>
+                </ul>
+                
+                    <!-- Alert if user doesn't select character type -->
                     <div class="alert alert-warning alert-dismissible" id="char-alert" style="display: none;" role="alert">You must select <strong>at least 1 character type</strong> 
                         <button type="button" id="size-alert-close" data-dismiss="alert" class="btn-close" aria-label="Close"></button>
                     </div>
                 </div>
             </div>                
 
-            <div class="row" id="generate-group">
+            <!-- Button and text field to generate and show the password -->
+            <div class="row align-self-center" id="generate-group">
                 <div class="col-md-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -96,6 +85,7 @@
         
         </main>
 
+        <!-- Footer -->
         <footer class="footer fixed-bottom">
             <div class="container text-center">
                 <a href="https://github.com/mtrupiano/password-generator" target="_blank">
